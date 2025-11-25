@@ -1,5 +1,5 @@
 import { GerenciadorTransacoes } from "./gerenciador-transacoes.js";
-import { Transacao } from "./transacao.js";
+import { Transacao } from "./Transacao.js";
 
 const gerenciadorTransacoes = new GerenciadorTransacoes();
 const form = document.getElementById('form-entrada');

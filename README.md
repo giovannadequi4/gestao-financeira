@@ -1,9 +1,7 @@
 # Sistema de Controle de Caixa/Bancos
-## Estudantes: Giovanna, Luísa e Marcos
+- Estudantes: Giovanna, Luísa e Marcos
 
 # Breve descrição do funcionamento do sistema
-
-# 🎯 Objetivo do Sistema
 Sistema simples de controle de caixa para uma pequena empresa, capaz de registrar as entradas e saídas de dinheiro, calcular o saldo diário e apresentar as descrições das movimentações.
 
 # 💻 Funcionalidades do Sistema

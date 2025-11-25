@@ -1,0 +1,16 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #transacoes-table, #transacoes-table * {
+    visibility: visible;
+  }
+
+  #transacoes-table {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

@@ -97,7 +97,7 @@ function ordenar(mapAgrupado) {
 function criarTabela(lista) {
   const tabela = document.createElement("table");
   tabela.classList = "table table-striped mt-3";
-
+  tabela.setAttribute("id", "transacoes-table");
   tabela.innerHTML = `
     <thead>
       <tr>
@@ -152,18 +152,29 @@ function criarTabelas() {
 
   ordenadas.forEach((lista, chave) => {
     const bloco = document.createElement("div");
-    const titulo = document.createElement("h2");
-    titulo.classList = "pt-3";
 
+    const titulo = document.createElement("h2");
+    titulo.className = "pt-3";
     titulo.innerText = chave || "Todas as transações";
 
     const tabela = criarTabela(lista);
 
+    // --- botão de impressão ---
+    const botao = document.createElement("button");
+
+    botao.className = "btn btn-primary mb-3";
+    botao.innerText = "Imprimir";
+    botao.onclick = () => {
+      printSection(bloco);
+    };
+
     bloco.appendChild(titulo);
+    bloco.appendChild(botao);
     bloco.appendChild(tabela);
 
     container.appendChild(bloco);
   });
+
 }
 
 criarTabelas();

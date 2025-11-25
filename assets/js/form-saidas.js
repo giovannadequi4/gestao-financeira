@@ -1,6 +1,7 @@
-import { GerenciadorSaidas } from "./saida.js";
-import { Transacao } from "./Transacao.js";
-const saidas = new GerenciadorSaidas();
+import { GerenciadorTransacoes } from "./gerenciador-transacoes.js";
+import { Transacao } from "./transacao.js";
+
+const gerenciadorTransacoes = new GerenciadorTransacoes();
 const form = document.getElementById("form-saida");
 
 form.addEventListener("submit", function (e) {
@@ -10,9 +11,9 @@ form.addEventListener("submit", function (e) {
   const descricao = document.getElementById("descricao").value;
   const data = document.getElementById("data").value;
 
-  const novaSaida = new Transacao(valor, descricao, data);
+  const novaSaida = new Transacao(valor, descricao, data, "saida");
 
-  saidas.adicionarSaida(novaSaida);
+  gerenciadorTransacoes.adicionar(novaSaida);
   form.reset();
   alert("Saida registrada!");
 });

@@ -154,33 +154,30 @@ function criarTabelas() {
   ordenadas.forEach((lista, chave) => {
     const bloco = document.createElement("div");
 
+    // container horizontal 
+    const topo = document.createElement("div");
+    topo.className = "d-flex justify-content-between align-items-center pt-3";
+
     const titulo = document.createElement("h2");
-    titulo.className = "pt-3";
     titulo.innerText = chave || "Todas as transações";
 
-    const tabela = criarTabela(lista);
+    const areaBotoes = document.createElement("div");
+    areaBotoes.className = "d-flex"; 
 
-    // --- botão de impressão ---
+    // botão imprimir
     const botaoImprimir = document.createElement("button");
-
     botaoImprimir.className = "btn btn-primary mb-3";
     botaoImprimir.innerText = "Imprimir";
-    botaoImprimir.onclick = () => {
-      window.print();
-    };
+    botaoImprimir.onclick = () => window.print();
 
-    // --- botão de exportação XLS ---
+    // botão XLS
     const botaoXLS = document.createElement("button");
-
     botaoXLS.className = "btn btn-primary mb-3 ms-2";
     botaoXLS.innerText = "Exportar XLS";
-    botaoXLS.onclick = () => {
-      exportTableToXLS("transacoes.xls");
-    };
+    botaoXLS.onclick = () => exportTableToXLS("transacoes.xls");
 
-    // --- botão de limpar ---
+    // botão limpar
     const botaoLimpar = document.createElement("button");
-
     botaoLimpar.className = "btn btn-primary mb-3 ms-2";
     botaoLimpar.innerText = "Limpar registros";
     botaoLimpar.onclick = () => {
@@ -188,12 +185,17 @@ function criarTabelas() {
       window.location.reload();
     };
 
-    bloco.appendChild(titulo);
-    bloco.appendChild(botaoImprimir);
-    bloco.appendChild(botaoXLS);
-    bloco.appendChild(botaoLimpar);
-    bloco.appendChild(tabela);
+    areaBotoes.appendChild(botaoImprimir);
+    areaBotoes.appendChild(botaoXLS);
+    areaBotoes.appendChild(botaoLimpar);
 
+    topo.appendChild(titulo);
+    topo.appendChild(areaBotoes);
+
+    const tabela = criarTabela(lista);
+
+    bloco.appendChild(topo);
+    bloco.appendChild(tabela);
     container.appendChild(bloco);
   });
 

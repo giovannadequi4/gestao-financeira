@@ -165,7 +165,7 @@ function criarTabelas() {
     botao.className = "btn btn-primary mb-3";
     botao.innerText = "Imprimir";
     botao.onclick = () => {
-      printSection(bloco);
+      window.print();
     };
 
     bloco.appendChild(titulo);

@@ -1,4 +1,4 @@
-import { GerenciadorTransacoes } from "./gerenciador-transacoes.js";
+import { GerenciadorTransacoes } from "../model/GerenciadorTransacoes.js";
 
 const gerenciador = new GerenciadorTransacoes();
 const transacoes = gerenciador.transacoes;

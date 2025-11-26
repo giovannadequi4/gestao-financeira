@@ -15,5 +15,5 @@ form.addEventListener("submit", function (e) {
 
   gerenciadorTransacoes.adicionar(novaSaida);
   form.reset();
-  alert("Saida registrada!");
+  alert("Saída registrada!");
 });

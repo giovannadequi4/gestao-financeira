@@ -15,8 +15,3 @@ Sistema simples de controle de caixa para uma pequena empresa, capaz de registra
 - JavaScript para lógica
 - LocalStorage como persistência
 - Bootstrap e HTML para front-end
-
-## 📲 Exemplo de uso 
-
-- TODO: simulação de entradas e saídas
-- TODO: print da tela com a execução do programa

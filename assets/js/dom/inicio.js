@@ -60,7 +60,7 @@ function agrupar(mapSeparado) {
         const novaTransacao = {
           ...transacao,
           data: chave,
-          descricao: `Soma do ${tipo} ${chave}`,
+          descricao: `Saldo do ${tipo} ${chave}`,
           valor: Math.abs(soma),
           tipo: soma >= 0 ? "entrada" : "saida"
         };
@@ -125,7 +125,7 @@ function criarTabela(lista) {
   const rodape = document.createElement("tfoot");
   rodape.innerHTML = `
     <tr>
-      <th colspan="2" class="text-end">Total</th>
+      <th colspan="2" class="text-end">Saldo Total</th>
       <td>${total.toFixed(2)}</td>
     </tr>
   `;
